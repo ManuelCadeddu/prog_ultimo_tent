@@ -9,3 +9,4 @@ edition = "2021"
 eframe = "0.24.1"
 serde = { version = "1.0.193", features = ["derive"] }
 screenshots = "0.8.5"
+winit = "0.29.5"
