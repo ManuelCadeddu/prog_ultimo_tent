@@ -1,0 +1,14 @@
+REQUISITI:
+	- multi-piattaforma
+	- GUI intuitiva e user-friendly
+	- dopo aver fatto lo screen, dare la possibiltà di selezionare una parte dello schermo con un click che potrà essere poi ridimensionata trascinando gli angoli
+	- gli utenti devono poter scegliere i tasti rapidi per fare lo screen
+	- più formati di output 
+	- lo screen deve essere (automaticamente) "copiato" per poterlo incollare
+
+
+
+
+DOMANDE PER MALNATI
+	- quali formati sono obbligatori? 
+	- la copia dello screen deve essere automaticamente "copiata negli appunti"?

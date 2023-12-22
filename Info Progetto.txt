@@ -1,0 +1,42 @@
+INFO PROGETTO
+
+LIBRERIE:
+Screenshots -> screenshots (crate) (oppure ffmpeg, che dovrebbe gestire crop e cambi di formato)
+Il formato è GIF, ma non credo serva fare anche video
+
+Druid, EGUI o gtk4 (meglio EGUI mi sa) -> GUI  -->  Druid è stato discontinued in favore di Xilem (anche se credo che Druid sia nativa di Rust)
+C'è anche Tauri per la GUI, ma serve Javascript e non so se si può fare
+
+CAPIRE:
+_Come rendere editabili gli screen
+ (annotazioni, ridimensionamento...)
+
+_Come gestire le Hotkeys
+
+_Requisiti (portability e usability) troppo vaghi
+
+
+(Demo in cartella immagini)
+
+
+SOLUZIONI A PROBLEMI:
+(problema finestra trasparente anziché nera) --> "ciao ragazzi, sto scrivendo il progetto di Malnati ma è da giorni che sono bloccato con qualche bug che non mi permette di creare finestre trasparenti (mi servirebbe proprio per permettere il click and grab sullo schermo). Qualcuno saprebbe aiutarmi?"  
+
+--->>  "In egui serviva settare mouse pass-through e capiva che alpha=0 significava trasparente rispetto alla finestra sotto e non colore nullo.
+Se vuoi andare a spulciarti le api altrimenti ti consiglio di cercare un background color o simile per la finestra"
+
+
+
+COMMENTI DELLA GENTE:
+
+"Possiamo usare qualsiasi crates open"  (qualsiasi cosa significhi)
+
+"Sì, ci tiene alla struttura dell'applicazione, cioè deve essere chiara e intuibile.
+Ad esempio quando si apriva lo strumento di cattura della nostra app, apparivano semplicemente 3 tastini, al che il prof ha detto che era un po' poco chiaro e che sarebbe stato meglio oscurare leggermente lo schermo in modo da renderlo più visibile."
+
+"non è l'essere colorato il punto, quanto il "rendere chiaro e palese quello che si sta facendo". Ad esempio se selezioni una porzione dello schermo deve esserci il contorno che ti sta indicando cosa stai facendo. Quindi il consiglio che do è guardare lo strumento di windows e fare le funzioni richieste, il più simile possibile a quelle."
+
+"Con further adjustments intendeva poter aggiustare individualmente i vertici della finestra e non solo poter ridurla 
+Alchè gli ho fatto vedere il pdf coi requisiti e di come lo strumento di cattura di Windows funziona (perché è da lì che abbiamo preso ispirazione) e ci ha detto che avremmo dovuto capire cosa intendeva"
+
+"Tipo noi gli avevamo chiesto (a maggio tipo) come dovesse essere l'app e quale fosse il target di persone e lui ci fa "deve essere utilizzabile anche da tua nonna" o qualcosa del genere" ----> "Noi abbiamo fatto una semplicissima cut dove trascini uno dei quattro lati e non ci ha detto nulla" (bo a questo punto non so a chi credere)
