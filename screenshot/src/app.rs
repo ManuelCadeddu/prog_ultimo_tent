@@ -3,6 +3,7 @@ use eframe::egui;
 use egui::*;
 use screenshots::Screen;
 use std::time::Instant;
+use chrono::{DateTime, Utc, Local};
 
 use winit::{
     event::{Event, WindowEvent, MouseButton, ElementState},
@@ -103,8 +104,7 @@ impl eframe::App for TemplateApp {
                     ui.spacing_mut().item_spacing.x = 0.0; // Riduci lo spazio tra i widget
 
                     if ui.button("FULL").clicked() {
-                        //screenshot_full();
-                        ctx.send_viewport_cmd(egui::ViewportCommand::Screenshot);
+                        screenshot_full();
                     };
 
                     ui.add_space(20.0);
@@ -191,15 +191,21 @@ impl eframe::App for TemplateApp {
 
 fn screenshot_full() {
 
-    let start = Instant::now();
     let screens = Screen::all().unwrap();
+    let start = chrono::Utc::now();
+    
+    // Convert UTC to local time (se puoi anche utilizzare direttamente Utc o Local)
+    let local_datetime: DateTime<Local> = start.into();
+
+    // Formatta la data e l'ora nel formato desiderato
+    let formatted_datetime = local_datetime.format("%Y-%m-%d_%H-%M").to_string();
 
     for screen in screens {
 
         let mut image = screen.capture().unwrap();
 
         image
-            .save(format!("target/{}.png", screen.display_info.id))
+            .save(format!("target/{}.png", formatted_datetime))
             .unwrap();
         /*
                 image
@@ -211,22 +217,11 @@ fn screenshot_full() {
                     .unwrap();
          */
     }
-    /*
-        image = screen.capture_area(300, 300, 300, 300).unwrap();
-        image
-            .save(format!("target/{}-2.png", screen.display_info.id))
-            .unwrap();
-
-        let screen = Screen::from_point(100, 100).unwrap();
-        println!("capturer {screen:?}");
-
-        let image = screen.capture_area(300, 300, 300, 300).unwrap();
-        image.save("target/capture_display_with_point.png").unwrap();
-        println!("运行耗时: {:?}", start.elapsed());*/
+    
 }
 
 fn screenshot_area() {
-
+/*
     //let screens = Screen::all().unwrap();
 
     let event_loop = EventLoop::new();
@@ -306,7 +301,7 @@ fn screenshot_area() {
             },
             _ => (),
         }
-    });
+    });*/
 }
 
 
